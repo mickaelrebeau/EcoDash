@@ -1,5 +1,13 @@
 {
   "name": "ecodash",
+  "version": "1.0.0",
+  "description": "Dashboard de suivi de consommation énergétique et impact écologique",
+  "author": "Mickael Rebeau",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rebeaumickael/ecodash.git"
+  },
   "private": true,
   "type": "module",
   "scripts": {
