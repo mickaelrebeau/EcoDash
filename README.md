@@ -1,75 +1,76 @@
-# Nuxt Minimal Starter
+# 🌱 EcoDash
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+> Dashboard de suivi de consommation énergétique et impact écologique en temps réel.
 
-## Setup
+![EcoDash Dashboard](public/preview.png)
 
-Make sure to install dependencies:
+EcoDash est une application moderne construite avec **Nuxt 3** permettant de visualiser, analyser et réduire votre consommation électrique. Conçu pour être rapide, beau et informatif.
+
+## ✨ Fonctionnalités
+
+- ⚡ **Temps Réel** : Visualisation de la puissance instantanée avec graphiques dynamiques fluides.
+- 🌍 **Impact Écologique** : Conversion automatique des kWh en CO₂ et équivalents concrets (km en voiture, arbres, etc.).
+- 📊 **Analyses** : Historique de consommation, pics de puissance, et répartition par usage.
+- 🔔 **Alertes** : Système de détection d'anomalies et dépassement de seuil.
+- 💾 **Données** : Import compatible avec les exports Enedis/Linky (CSV).
+- 🎨 **Design** : Interface soignée, mode sombre/clair, et responsive.
+
+## 🛠 Tech Stack
+
+- **Framework** : [Nuxt 3](https://nuxt.com) (Vue 3)
+- **Styling** : [Tailwind CSS](https://tailwindcss.com) + [Shadcn UI](https://ui.shadcn.com) logic
+- **Charts** : SVG Custom Sparklines + Chart.js
+- **Icons** : [Lucide Vue](https://lucide.dev)
+- **State** : Vue Composition API (Refs/Computed)
+
+## 🚀 Démarrage Rapide
+
+### Prérequis
+
+- Node.js 18+
+- npm, pnpm, ou yarn
+
+### Installation
 
 ```bash
-# npm
+# Cloner le dépôt
+git clone https://github.com/votre-username/ecodash.git
+cd ecodash
+
+# Installer les dépendances
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+### Lancer en développement
 
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+L'application sera accessible sur `http://localhost:3000`.
 
-Build the application for production:
+## 📦 Structure du Projet
 
-```bash
-# npm
-npm run build
+- `components/` : Composants Vue réutilisables (Charts, KPI, UI).
+- `composables/` : Logique métier (Calculs, API, Realtime).
+- `pages/` : Routes de l'application (Dashboard, Settings, Data).
+- `server/` : API Nitro pour la gestion des données simulées et persistantes.
+- `public/` : Assets statiques.
 
-# pnpm
-pnpm build
+## 🤝 Contribution
 
-# yarn
-yarn build
+Les contributions sont les bienvenues ! Consultez notre [Guide de Contribution](CONTRIBUTING.md) pour commencer.
 
-# bun
-bun run build
-```
+1. Forkez le projet
+2. Créez votre branche (`git checkout -b feature/AmazingFeature`)
+3. Committez vos changements (`git commit -m 'feat: Add some AmazingFeature'`)
+4. Pushez vers la branche (`git push origin feature/AmazingFeature`)
+5. Ouvrez une Pull Request
 
-Locally preview production build:
+## 📄 Licence
 
-```bash
-# npm
-npm run preview
+Distribué sous la licence MIT. Voir `LICENSE` pour plus d'informations.
 
-# pnpm
-pnpm preview
+---
 
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Fait avec ❤️ pour la planète.
