@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Home, Zap, Leaf, Settings, Bell, Database, Wifi } from 'lucide-vue-next'
+import { Home, Zap, Leaf, Settings, Bell, Database, Wifi, Car, UtensilsCrossed, Activity } from 'lucide-vue-next'
 
 const { unacknowledgedCount } = useAlerts()
 </script>
@@ -34,6 +34,13 @@ const { unacknowledgedCount } = useAlerts()
                 active-class="bg-accent text-accent-foreground">
                 <Leaf class="h-4 w-4" />
                 Écologie
+            </NuxtLink>
+
+            <NuxtLink to="/dashboard/activities"
+                class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
+                active-class="bg-accent text-accent-foreground">
+                <Activity class="h-4 w-4" />
+                Activités
             </NuxtLink>
 
             <NuxtLink to="/dashboard/alerts"

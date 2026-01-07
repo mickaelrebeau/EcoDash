@@ -51,6 +51,49 @@ db.exec(`
     end_hour INTEGER,
     is_default INTEGER DEFAULT 0
   );
+  
+  CREATE TABLE IF NOT EXISTS trips (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    date TEXT NOT NULL,
+    transport_mode TEXT NOT NULL,
+    distance REAL NOT NULL,
+    co2_kg REAL NOT NULL,
+    notes TEXT,
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP
+  );
+  
+  CREATE INDEX IF NOT EXISTS idx_trips_date ON trips(date);
+  CREATE INDEX IF NOT EXISTS idx_trips_transport_mode ON trips(transport_mode);
+  
+  CREATE TABLE IF NOT EXISTS meals (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    date TEXT NOT NULL,
+    meal_type TEXT NOT NULL,
+    meal_category TEXT NOT NULL,
+    co2_kg REAL NOT NULL,
+    notes TEXT,
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP
+  );
+  
+  CREATE INDEX IF NOT EXISTS idx_meals_date ON meals(date);
+  CREATE INDEX IF NOT EXISTS idx_meals_type ON meals(meal_type);
+  CREATE INDEX IF NOT EXISTS idx_meals_category ON meals(meal_category);
+  
+  CREATE TABLE IF NOT EXISTS activities (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    date TEXT NOT NULL,
+    category TEXT NOT NULL,
+    subcategory TEXT NOT NULL,
+    quantity REAL,
+    unit TEXT,
+    co2_kg REAL NOT NULL,
+    notes TEXT,
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP
+  );
+  
+  CREATE INDEX IF NOT EXISTS idx_activities_date ON activities(date);
+  CREATE INDEX IF NOT EXISTS idx_activities_category ON activities(category);
+  CREATE INDEX IF NOT EXISTS idx_activities_subcategory ON activities(subcategory);
 `)
 
 // Insert default tariff if not exists
